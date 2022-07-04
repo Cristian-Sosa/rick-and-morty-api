@@ -17,7 +17,9 @@ function Card({ character }) {
         Gender: {character.gender}
       </span>
 
-      <button type='button' className="mt-5 btn btn-primary">View More</button>
+      <button type="button" className="mt-5 btn btn-primary">
+        View More
+      </button>
     </div>
   );
 }
