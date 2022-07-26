@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Card from "./Card";
 import PagesBar from "./PagesBar";
 
 function CardList() {
   const [characters, setCharacters] = useState([]);
   const [page, setPage] = useState(1);
+
+  const navRef = useRef();
 
   useEffect(() => {
     async function fetchData() {
@@ -16,12 +18,15 @@ function CardList() {
     }
 
     fetchData();
+
+    navRef.current.scrollIntoView({ behavior: 'smooth' });
   }, [page]);
+  
 
   return (
     <main className="pb-5 bg-dark text-white">
       <div className="container">
-        <nav className="bg-dark navbar navbar-expand-lg">
+        <nav className="bg-dark navbar navbar-expand-lg" ref={navRef}>
           <div className="container d-flex flex-row justify-content-start align-items-center">
             <svg
               className="me-3"
