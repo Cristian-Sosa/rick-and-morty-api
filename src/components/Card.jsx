@@ -24,11 +24,8 @@ function Card({ character }) {
 
       <StatusCharacter status={character.status} species={character.species} />
 
-      <span className="text-white-50 text-center">
-        Gender: {character.gender}
-      </span>
-
       <a
+        href={`https://rickandmortyapi.com/api/character/${character.id}`}
         type="button"
         className="mt-4 center btn btn-primary rounded-pill"
         style={{ width: "60%" }}
