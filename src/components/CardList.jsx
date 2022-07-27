@@ -4,7 +4,9 @@ import PagesBar from "./PagesBar";
 
 function CardList() {
   const [characters, setCharacters] = useState([]);
+
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   const navRef = useRef();
 
@@ -14,14 +16,16 @@ function CardList() {
         `https://rickandmortyapi.com/api/character?page=${page}`
       );
       const data = await response.json();
+
+      setLoading(false);
+
       setCharacters(data.results);
     }
 
     fetchData();
 
-    navRef.current.scrollIntoView({ behavior: 'smooth' });
+    navRef.current.scrollIntoView({ behavior: "smooth" });
   }, [page]);
-  
 
   return (
     <main className="pb-5 bg-dark text-white">
@@ -32,7 +36,7 @@ function CardList() {
               className="me-3"
               style={{
                 width: "50px",
-                height: '50px',
+                height: "50px",
                 fill: "#fefefe",
               }}
             >
@@ -43,15 +47,27 @@ function CardList() {
         </nav>
       </div>
 
-      <section className="container-sm">
-        <div className="row">
-          {characters.map((character) => {
-            return <Card key={character.id} character={character} />;
-          })}
+      {loading ? (
+        <div
+          class="d-flex justify-content-center"
+          style={{ width: "100vw", height: "100vh", paddingTop: "280px"}}
+        >
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
         </div>
-      </section>
+      ) : (
+        <section className="container-sm">
+          <div className="row">
+            {characters.map((character) => {
+              return <Card key={character.id} character={character} />;
+            })}
+          </div>
+        </section>
+      )}
       <PagesBar page={page} setPage={setPage} />
     </main>
   );
 }
+
 export default CardList;
