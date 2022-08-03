@@ -1,4 +1,4 @@
-function FilterBar({ searchByName }) {
+function FilterBar({ searchByName, searchByStatus }) {
   return (
     <nav className="mt-3 mb-5 container-fluid navbar navbar-expand-lg bg-dark">
       <div className="d-flex flex-row-reverse m-auto container row">
@@ -20,22 +20,34 @@ function FilterBar({ searchByName }) {
 
         <div className="py-3 col-12 col-md-6 d-flex flex-row justify-content-start align-items-center">
           <span className="navbar-brand fs-3 text-light" href="#">
-            Filter By:
+            Filter By Status:
           </span>
           <ul className="navbar-nav d-flex flex-row">
             <li className="nav-item me-2">
-              <a className="nav-link text-white-50" href="#">
-                Status
+              <a
+                className="fs-5 nav-link link-primary"
+                href="#"
+                onClick={searchByStatus}
+              >
+                Alive
               </a>
             </li>
             <li className="nav-item me-2">
-              <a className="nav-link text-white-50" href="#">
-                Episodes
+              <a
+                className="fs-5 nav-link link-primary"
+                href="#"
+                onClick={searchByStatus}
+              >
+                Dead
               </a>
             </li>
             <li className="nav-item me-2">
-              <a className="nav-link text-white-50" href="#">
-                Clear Filters
+              <a
+                className="fs-5 nav-link link-primary"
+                href="#"
+                onClick={searchByStatus}
+              >
+                Unknown
               </a>
             </li>
           </ul>

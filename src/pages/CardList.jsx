@@ -9,9 +9,11 @@ import PagesBar from "../components/PagesBar";
 function CardList() {
   const [characters, setCharacters] = useState([]);
 
+  const [name, setName] = useState();
+  const [status, setStatus] = useState();
+
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
-  const [name, setName] = useState();
 
   const navRef = useRef();
 
@@ -21,6 +23,12 @@ function CardList() {
     setName(e.target[0].value);
   };
 
+  const searchByStatus = (e) => {
+    e.preventDefault();
+
+    setStatus(e.target.textContent);
+  };
+
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
@@ -28,8 +36,8 @@ function CardList() {
       const response = await fetch(
         // `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}`
         `https://rickandmortyapi.com/api/character/?page=${page}${
-          name !== undefined ? `&name=${name}` : `/`
-        }`
+          name !== undefined ? `&name=${name}` : ``
+        }${status !== undefined ? `&status=${status}` : ""}`
       );
 
       const data = await response.json();
@@ -41,12 +49,12 @@ function CardList() {
     navRef.current.scrollIntoView({ behavior: "smooth" });
 
     fetchData();
-  }, [page, name]);
+  }, [page, name, status]);
 
   return (
     <main className="pb-5 bg-dark text-white">
       <NavBar navRef={navRef} />
-      <FilterBar searchByName={searchByName} />
+      <FilterBar searchByName={searchByName} searchByStatus={searchByStatus} />
 
       {loading ? (
         <div
