@@ -1,6 +1,6 @@
 function NavBar({ navRef }) {
   return (
-    <nav className="bg-dark navbar navbar-expand-lg" ref={navRef}>
+    <nav className="py-4 bg-dark navbar navbar-expand-lg" ref={navRef}>
       <div className="container d-flex flex-row justify-content-start align-items-center">
         <svg
           className="me-3"

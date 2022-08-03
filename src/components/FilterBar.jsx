@@ -1,20 +1,24 @@
-function FilterBar() {
+function FilterBar({ searchByName }) {
   return (
-    <nav className="mt-5 container-fluid navbar navbar-expand-lg bg-dark">
+    <nav className="mt-3 mb-5 container-fluid navbar navbar-expand-lg bg-dark">
       <div className="d-flex flex-row-reverse m-auto container row">
-        <form className="col-12 col-md-6 d-flex" role="search">
+        <form
+          className="py-3 col-12 col-md-6 d-flex"
+          id="form"
+          onSubmit={searchByName}
+        >
           <input
             className="form-control me-2 px-4 rounded-pill"
-            type="search"
+            id="NameInput"
+            type="text"
             placeholder="Search"
-            aria-label="Search"
           />
           <button className="btn btn-primary rounded-pill px-4" type="submit">
             Search
           </button>
         </form>
 
-        <div className="col-12 col-md-6 d-flex flex-row justify-content-start align-items-center">
+        <div className="py-3 col-12 col-md-6 d-flex flex-row justify-content-start align-items-center">
           <span className="navbar-brand fs-3 text-light" href="#">
             Filter By:
           </span>
@@ -26,12 +30,12 @@ function FilterBar() {
             </li>
             <li className="nav-item me-2">
               <a className="nav-link text-white-50" href="#">
-                Season
+                Episodes
               </a>
             </li>
             <li className="nav-item me-2">
               <a className="nav-link text-white-50" href="#">
-                Clear FIlters
+                Clear Filters
               </a>
             </li>
           </ul>
