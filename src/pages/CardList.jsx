@@ -25,8 +25,14 @@ function CardList() {
 
   const searchByStatus = (e) => {
     e.preventDefault();
+    
+    if (status !== e.target.textContent) {
+      setStatus(e.target.textContent);
+      
+    } else {
+      setStatus(undefined);
+    }
 
-    setStatus(e.target.textContent);
   };
 
   useEffect(() => {
@@ -54,7 +60,7 @@ function CardList() {
   return (
     <main className="pb-5 bg-dark text-white">
       <NavBar navRef={navRef} />
-      <FilterBar searchByName={searchByName} searchByStatus={searchByStatus} />
+      <FilterBar searchByName={searchByName} searchByStatus={searchByStatus} status={status} />
 
       {loading ? (
         <div
