@@ -24,12 +24,12 @@ function Card({ character }) {
 
       <StatusCharacter status={character.status} species={character.species} />
 
-      <a
+      {/* <a
         className="mt-4 center btn btn-primary rounded-pill"
         style={{ width: "60%" }}
       >
         View More
-      </a>
+      </a> */}
     </div>
   );
 }

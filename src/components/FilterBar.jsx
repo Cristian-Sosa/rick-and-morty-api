@@ -20,7 +20,7 @@ function FilterBar({ searchByName, searchByStatus, status }) {
 
         <div className="py-3 col-12 col-md-6 d-flex flex-row justify-content-start align-items-center">
           <span className="navbar-brand fs-3 text-light" href="#">
-            Filter By Status:
+            Filter By:
           </span>
           <ul className="navbar-nav d-flex flex-row">
           <li className={`nav-item me-2 rounded-pill d-flex flex-row align-items-center ${status == 'Alive' ? `bg-primary px-3` : 'bg-transparent'}`}>
