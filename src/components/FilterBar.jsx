@@ -14,7 +14,7 @@ function FilterBar({ searchByName, searchByStatus, status }) {
             placeholder="Search"
           />
           <button className="btn btn-primary rounded-pill px-4" type="submit">
-            Search
+            <i class="bi bi-search"></i>
           </button>
         </form>
 
@@ -23,30 +23,66 @@ function FilterBar({ searchByName, searchByStatus, status }) {
             Filter By:
           </span>
           <ul className="navbar-nav d-flex flex-row">
-          <li className={`nav-item me-2 rounded-pill d-flex flex-row align-items-center ${status == 'Alive' ? `bg-primary px-3` : 'bg-transparent'}`}>
-              <i className={`bi bi-x-circle-fill ${status == 'Alive' ? `d-inline-block me-2 fs-5 text-light` : 'd-none'}`}></i>
+            <li
+              className={`nav-item me-2 rounded-pill d-flex flex-row align-items-center ${
+                status == "Alive" ? `bg-primary px-3` : "bg-transparent"
+              }`}
+            >
+              <i
+                className={`bi bi-x-circle-fill ${
+                  status == "Alive"
+                    ? `d-inline-block me-2 fs-5 text-light`
+                    : "d-none"
+                }`}
+              ></i>
               <a
-                className={`fs-5 nav-link ${status == 'Alive' ? 'text-light' : 'text-white-50'}`}
+                className={`fs-5 nav-link ${
+                  status == "Alive" ? "text-light" : "text-white-50"
+                }`}
                 href="#"
                 onClick={searchByStatus}
               >
                 Alive
               </a>
             </li>
-            <li className={`nav-item me-2 rounded-pill d-flex flex-row align-items-center ${status == 'Dead' ? `bg-primary px-3` : 'bg-transparent'}`}>
-              <i className={`bi bi-x-circle-fill ${status == 'Dead' ? `d-inline-block me-2 fs-5 text-light` : 'd-none'}`}></i>
+            <li
+              className={`nav-item me-2 rounded-pill d-flex flex-row align-items-center ${
+                status == "Dead" ? `bg-primary px-3` : "bg-transparent"
+              }`}
+            >
+              <i
+                className={`bi bi-x-circle-fill ${
+                  status == "Dead"
+                    ? `d-inline-block me-2 fs-5 text-light`
+                    : "d-none"
+                }`}
+              ></i>
               <a
-                className={`fs-5 nav-link ${status == 'Dead' ? 'text-light' : 'text-white-50'}`}
+                className={`fs-5 nav-link ${
+                  status == "Dead" ? "text-light" : "text-white-50"
+                }`}
                 href="#"
                 onClick={searchByStatus}
               >
                 Dead
               </a>
             </li>
-            <li className={`nav-item me-2 rounded-pill d-flex flex-row align-items-center ${status == 'Unknown' ? `bg-primary px-3` : 'bg-transparent'}`}>
-              <i className={`bi bi-x-circle-fill ${status == 'Unknown' ? `d-inline-block me-2 fs-5 text-light` : 'd-none'}`}></i>
+            <li
+              className={`nav-item me-2 rounded-pill d-flex flex-row align-items-center ${
+                status == "Unknown" ? `bg-primary px-3` : "bg-transparent"
+              }`}
+            >
+              <i
+                className={`bi bi-x-circle-fill ${
+                  status == "Unknown"
+                    ? `d-inline-block me-2 fs-5 text-light`
+                    : "d-none"
+                }`}
+              ></i>
               <a
-                className={`fs-5 nav-link ${status == 'Unknown' ? 'text-light' : 'text-white-50'}`}
+                className={`fs-5 nav-link ${
+                  status == "Unknown" ? "text-light" : "text-white-50"
+                }`}
                 href="#"
                 onClick={searchByStatus}
               >
