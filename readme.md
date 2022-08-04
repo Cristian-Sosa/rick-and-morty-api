@@ -1,4 +1,4 @@
-# Rick And Morty API | Practice
+# Rick And Morty Character Searcher
 
 Hi 👋🏽 I'm someone less than jr frontend dev 🌱
 
