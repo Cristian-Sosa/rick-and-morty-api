@@ -48,10 +48,10 @@ function CardList() {
 
       const data = await response.json();
 
-      setLoading(false);
-
       setCharacters(data.results);
+      setLoading(false);
     }
+      
     navRef.current.scrollIntoView({ behavior: "smooth" });
 
     fetchData();
