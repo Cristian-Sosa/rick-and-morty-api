@@ -139,6 +139,7 @@
 <article>
   
   I'm Cristian Sosa - [instagram](https://www.instagram.com/crisg.sosa/) - gustavosocris@gmail.com
+  
   Project Link: [https://github.com/Cristian-Sosa/rick-and-morty-api](https://github.com/Cristian-Sosa/rick-and-morty-api)
 
 </article>
