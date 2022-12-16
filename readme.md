@@ -46,7 +46,8 @@
         <li>Features</li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#install">How to Install</a></li>
+    <li><a href="#challenges">Challenges</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ul>
@@ -74,6 +75,7 @@
   
   - ReactJs 18.x
   - Bootstrap 5.x
+  - Bootstrap Icons 1.10.x
   - Rick and Morty API
   
 </article>
@@ -112,8 +114,65 @@
 <br />
 <br />
 
-<section id="usage">
-  <h2>✨ Usage</h2>
+<section id="install">
+  <h2>💻 How to install?</h2>
+
+<article>
+  
+  *For this project you will use NodeJs and NPM*
+
+  <pre>
+  <code>
+   $ git clone https://github.com/Cristian-Sosa/rick-and-morty-api.git // Clone the repo
+   
+   $ cd rick-and-morty-api
+   
+   $ npm install // Install the dependencies
+  </code>
+  </pre>
+  
+  
+  In the 'src' are all the files you may want to see
+  
+  
+  <pre>
+  
+   + src
+     + components
+     + pages
+     - App.jsx
+     - main.jsx
+  
+  </pre>
+  
+  If you want locally run the server. You may use
+  
+  <pre>
+  <code>
+    $ npm run dev
+  </code>
+  </pre>
+  
+  If you want to see a locally deploy preview. You may use
+  
+  <pre>
+  <code>
+    $ npm run build
+    $ npm run preview
+  </code>
+  </pre>
+  
+  Enjoy the project!
+  
+</article>
+  
+</section>
+
+<br />
+<br />
+
+<section id="challenges">
+  <h2>✨ A challenges snap peek</h2>
 
 <article>
 
@@ -122,6 +181,10 @@
   <p>This is a snap of the code. We will focus in a search by name function.</p>
   <p>The component have a simple form with an input and a submit button, when we send the form one event captures the input value and a useState function is used to assign it to the name variable. As soon as this variable is re-asigned, an useEffect function make a fetch to the API and re-load the page with the new characters</p>
 
+  ![FilterBar React component](./design/FilterBarComponent-filterByName.png "FilterBar React component")
+  
+  <p>The hooks were a challenge for me, I never used before and were a new concept to learn. However, I liked to learn it and it's something that I always going to use</p>
+  
   ![FilterBar React component](./design/FilterBarComponent-filterByName.png "FilterBar React component")
   
   <p>The hooks were a challenge for me, I never used before and were a new concept to learn. However, I liked to learn it and it's something that I always going to use</p>
